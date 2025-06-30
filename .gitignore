@@ -1,0 +1,21 @@
+# Ignore backup files - ukládáme pouze skripty, ne zálohy samotné
+backups/
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.backup
+
+# Ignore logs
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
