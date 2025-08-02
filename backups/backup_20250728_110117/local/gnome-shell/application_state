@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="4356" last-seen="1753692003"/>
+    <application id="org.gnome.TextEditor.desktop" score="279" last-seen="1753368415"/>
+    <application id="google-chrome.desktop" score="7467" last-seen="1753692024"/>
+    <application id="org.gnome.Software.desktop" score="3" last-seen="1753692308"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="667" last-seen="1753205809"/>
+    <application id="whatsapp-linux-app_whatsapp-linux-app.desktop" score="11545" last-seen="1750948893"/>
+    <application id="update-manager.desktop" score="5" last-seen="1753635312"/>
+    <application id="claude-desktop.desktop" score="11350.5" last-seen="1753693017"/>
+    <application id="chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop" score="4" last-seen="1753206247"/>
+    <application id="org.gnome.eog.desktop" score="41" last-seen="1753205949"/>
+    <application id="google-chrome-unstable.desktop" score="5219" last-seen="1753691281"/>
+    <application id="cursor.desktop" score="13743" last-seen="1753692765"/>
+    <application id="org.gnome.Terminal.desktop" score="25296.25" last-seen="1753693172"/>
+    <application id="firefox_firefox.desktop" score="8421" last-seen="1752141804"/>
+    <application id="doublecmd.desktop" score="632" last-seen="1753693226"/>
+    <application id="git-gui.desktop" score="354" last-seen="1753689526"/>
+    <application id="brave_brave.desktop" score="6948" last-seen="1753690825"/>
+    <application id="code.desktop" score="1" last-seen="1753691084"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="960" last-seen="1753277868"/>
+    <application id="org.gnome.Settings.desktop" score="10028.5" last-seen="1753693226"/>
+  </context>
+</application-state>

@@ -1,0 +1,17 @@
+apps-menu@gnome-shell-extensions.gcampax.github.com
+auto-move-windows@gnome-shell-extensions.gcampax.github.com
+ding@rastersoft.com
+drive-menu@gnome-shell-extensions.gcampax.github.com
+launch-new-instance@gnome-shell-extensions.gcampax.github.com
+light-style@gnome-shell-extensions.gcampax.github.com
+native-window-placement@gnome-shell-extensions.gcampax.github.com
+places-menu@gnome-shell-extensions.gcampax.github.com
+screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
+system-monitor@gnome-shell-extensions.gcampax.github.com
+tiling-assistant@ubuntu.com
+ubuntu-appindicators@ubuntu.com
+ubuntu-dock@ubuntu.com
+user-theme@gnome-shell-extensions.gcampax.github.com
+window-list@gnome-shell-extensions.gcampax.github.com
+windowsNavigator@gnome-shell-extensions.gcampax.github.com
+workspace-indicator@gnome-shell-extensions.gcampax.github.com

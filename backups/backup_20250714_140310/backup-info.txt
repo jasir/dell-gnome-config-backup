@@ -1,0 +1,6 @@
+GNOME Backup - Po 14. července 2025, 14:03:10 CEST
+Hostname: NB-JZJ114-LTS
+User: jarda
+GNOME Version: GNOME Shell 46.0
+OS: Ubuntu 24.04.2 LTS
+Kernel: 6.11.0-29-generic

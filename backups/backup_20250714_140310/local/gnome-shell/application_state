@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="featherpad.desktop" score="0" last-seen="1752113803"/>
+    <application id="org.gnome.TextEditor.desktop" score="250" last-seen="1752431526"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="730" last-seen="1752491981"/>
+    <application id="org.gnome.SystemMonitor.desktop" score="2" last-seen="1751926286"/>
+    <application id="chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop" score="1" last-seen="1752073098"/>
+    <application id="phpstorm_phpstorm.desktop" score="50" last-seen="1752220522"/>
+    <application id="gitk.desktop" score="26" last-seen="1752408404"/>
+    <application id="cursor.desktop" score="12985" last-seen="1752492062"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="16" last-seen="1752422813"/>
+    <application id="com.github.d4nj1.tlpui.desktop" score="0" last-seen="1752410439"/>
+    <application id="google-chrome-unstable.desktop" score="4622" last-seen="1752494201"/>
+    <application id="org.gnome.eog.desktop" score="15" last-seen="1752435967"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="596" last-seen="1752492241"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="4123" last-seen="1752438426"/>
+    <application id="org.gnome.Terminal.Preferences.desktop" score="36" last-seen="1752239929"/>
+    <application id="code.desktop" score="213" last-seen="1752410973"/>
+    <application id="chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop" score="4" last-seen="1752093051"/>
+    <application id="brave_brave.desktop" score="5651" last-seen="1752494202"/>
+    <application id="firefox_firefox.desktop" score="8421" last-seen="1752141804"/>
+    <application id="doublecmd.desktop" score="444" last-seen="1752440208"/>
+    <application id="chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop" score="19" last-seen="1752438439"/>
+    <application id="org.gnome.Settings.desktop" score="10001.5" last-seen="1752494201"/>
+    <application id="org.gnome.Extensions.desktop" score="212" last-seen="1752494337"/>
+    <application id="git-gui.desktop" score="332" last-seen="1752433390"/>
+    <application id="claude-desktop.desktop" score="9947.5" last-seen="1752494145"/>
+    <application id="org.gnome.Terminal.desktop" score="24213.25" last-seen="1752493539"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="240" last-seen="1752141113"/>
+    <application id="whatsapp-linux-app_whatsapp-linux-app.desktop" score="11545" last-seen="1750948893"/>
+    <application id="freeplane.desktop" score="166" last-seen="1752141639"/>
+    <application id="org.gnome.Nautilus.desktop" score="0" last-seen="1752435412"/>
+    <application id="yelp.desktop" score="3" last-seen="1752425076"/>
+    <application id="update-manager.desktop" score="0" last-seen="1752060604"/>
+    <application id="obsidian.desktop" score="996" last-seen="1752492691"/>
+    <application id="google-chrome.desktop" score="6966" last-seen="1752438419"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="667" last-seen="1752438419"/>
+    <application id="display-im6.q16.desktop" score="0" last-seen="1752071697"/>
+  </context>
+</application-state>
