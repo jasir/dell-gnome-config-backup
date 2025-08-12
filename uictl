@@ -462,45 +462,73 @@ create_pre_restore_backup() {
 compare_dconf() {
     local backup_path="$1"
     local dconf_backup="$backup_path/dconf/all-settings.ini"
-    
-    if [ ! -f "$dconf_backup" ]; then
-        print_warning "Dconf záloha nenalezena v: $dconf_backup"
-        return 1
-    fi
+    local extensions_backup="$backup_path/dconf/extensions-settings.ini"
     
     print_info "📊 Porovnávám dconf nastavení..."
     
-    # Create temporary file with current settings
-    local temp_current="/tmp/uictl-current-dconf-$(date +%s).ini"
-    dconf dump / > "$temp_current" 2>/dev/null
-    
-    if [ "$VERBOSE" = "true" ]; then
-        # Detailed diff with context
-        if ! diff -u "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
-            print_warning "🔄 Rozdíly v dconf nastavení:"
-            # Use delta if available, otherwise fall back to colored diff
-            if command -v delta >/dev/null 2>&1; then
-                diff -u "$dconf_backup" "$temp_current" | head -50 | delta --paging=never --line-numbers
+    # Compare main dconf settings
+    if [ -f "$dconf_backup" ]; then
+        # Create temporary file with current settings
+        local temp_current="/tmp/uictl-current-dconf-$(date +%s).ini"
+        dconf dump / > "$temp_current" 2>/dev/null
+        
+        if [ "$VERBOSE" = "true" ]; then
+            # Detailed diff with context
+            if ! diff -u "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
+                print_warning "🔄 Rozdíly v hlavním dconf nastavení:"
+                # Use delta if available, otherwise fall back to colored diff
+                if command -v delta >/dev/null 2>&1; then
+                    diff -u "$dconf_backup" "$temp_current" | delta --paging=never --line-numbers
+                else
+                    diff -u --color=always "$dconf_backup" "$temp_current" | sed 's/^/  /'
+                fi
             else
-                diff -u --color=always "$dconf_backup" "$temp_current" | head -50 | sed 's/^/  /'
-            fi
-            local diff_lines=$(diff -u "$dconf_backup" "$temp_current" | wc -l)
-            if [ $diff_lines -gt 50 ]; then
-                print_info "  ... (zobrazeno prvních 50 řádků z $diff_lines celkem)"
+                print_success "Hlavní dconf nastavení jsou identická"
             fi
         else
-            print_success "Dconf nastavení jsou identická"
+            # Simple comparison
+            if ! diff -q "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
+                print_warning "🔄 Hlavní dconf nastavení se liší od zálohy"
+            else
+                print_success "Hlavní dconf nastavení jsou identická"
+            fi
         fi
+        
+        rm -f "$temp_current"
     else
-        # Simple comparison
-        if ! diff -q "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
-            print_warning "🔄 Dconf nastavení se liší od zálohy"
-        else
-            print_success "Dconf nastavení jsou identická"
-        fi
+        print_warning "Hlavní dconf záloha nenalezena v: $dconf_backup"
     fi
     
-    rm -f "$temp_current"
+    # Compare extensions settings separately
+    if [ -f "$extensions_backup" ]; then
+        print_info "🔌 Porovnávám nastavení extensions..."
+        
+        local temp_extensions="/tmp/uictl-current-extensions-$(date +%s).ini"
+        dconf dump /org/gnome/shell/extensions/ > "$temp_extensions" 2>/dev/null
+        
+        if [ "$VERBOSE" = "true" ]; then
+            if ! diff -u "$extensions_backup" "$temp_extensions" > /dev/null 2>&1; then
+                print_warning "🔄 Rozdíly v nastavení extensions:"
+                if command -v delta >/dev/null 2>&1; then
+                    diff -u "$extensions_backup" "$temp_extensions" | delta --paging=never --line-numbers
+                else
+                    diff -u --color=always "$extensions_backup" "$temp_extensions" | sed 's/^/  /'
+                fi
+            else
+                print_success "Nastavení extensions jsou identická"
+            fi
+        else
+            if ! diff -q "$extensions_backup" "$temp_extensions" > /dev/null 2>&1; then
+                print_warning "🔄 Nastavení extensions se liší od zálohy"
+            else
+                print_success "Nastavení extensions jsou identická"
+            fi
+        fi
+        
+        rm -f "$temp_extensions"
+    else
+        print_warning "Extensions záloha nenalezena v: $extensions_backup"
+    fi
 }
 
 # Helper funkce pro porovnání konfiguračních souborů
