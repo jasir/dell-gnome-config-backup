@@ -143,9 +143,9 @@ restore_settings() {
                 target_path="$HOME/.config/$item_name"
                 
                 if [ "$dry_run" != "true" ]; then
-                    # Vytvořit zálohu existujícího nastavení
+                    # Vytvořit zálohu existujícího nastavení v /tmp
                     if [ -e "$target_path" ]; then
-                        mv "$target_path" "$target_path.backup-$(date +%s)" 2>/dev/null || true
+                        mv "$target_path" "/tmp/$(basename "$target_path").backup-$(date +%s)" 2>/dev/null || true
                     fi
                     cp -r "$config_item" "$target_path"
                     print_success "Obnoveno: $item_name"
@@ -161,9 +161,9 @@ restore_settings() {
         print_info "🔌 Obnovuji GNOME Shell extensions..."
         if [ "$dry_run" != "true" ]; then
             mkdir -p "$HOME/.local/share/gnome-shell"
-            # Záloha současných extensions
+            # Záloha současných extensions do /tmp
             if [ -d "$HOME/.local/share/gnome-shell/extensions" ]; then
-                mv "$HOME/.local/share/gnome-shell/extensions" "$HOME/.local/share/gnome-shell/extensions.backup-$(date +%s)" 2>/dev/null || true
+                mv "$HOME/.local/share/gnome-shell/extensions" "/tmp/extensions.backup-$(date +%s)" 2>/dev/null || true
             fi
             cp -r "$restore_path/local/extensions" "$HOME/.local/share/gnome-shell/extensions"
             print_success "Extensions obnoveny"

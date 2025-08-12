@@ -99,5 +99,11 @@ BACKUP_SIZE=$(du -sh "$CURRENT_BACKUP" | cut -f1)
 print_info "💾 Velikost zálohy: $BACKUP_SIZE"
 
 echo
+print_info "🧹 Čistím dočasné soubory ze zálohy..."
+# Smazat dočasné *.backup-* soubory/složky ze zálohy
+find "$CURRENT_BACKUP" -name "*.backup-[0-9]*" -type d -exec rm -rf {} + 2>/dev/null || true
+find "$CURRENT_BACKUP" -name "*.backup-[0-9]*" -type f -exec rm -f {} + 2>/dev/null || true
+print_success "Dočasné soubory vyčištěny"
+
 print_info "📋 Obsah zálohy:"
 find "$CURRENT_BACKUP" -type f | sed 's|^'"$CURRENT_BACKUP"'/||' | sort
