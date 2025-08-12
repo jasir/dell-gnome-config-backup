@@ -39,6 +39,7 @@ Příkazy:
   restore <backup>    Obnoví zálohu GNOME nastavení  
   list                Zobrazí dostupné zálohy
   status              Zobrazí info o nejnovější záloze
+  diff [backup]       Porovná aktuální nastavení se zálohou
   clean [počet]       Vyčistí staré zálohy (ponechá posledních N)
   help [příkaz]       Zobrazí nápovědu
 
@@ -55,6 +56,8 @@ Příklady:
   uictl restore latest            Obnoví nejnovější zálohu
   uictl restore backup_20240630   Obnoví specifickou zálohu
   uictl status                    Ukáže info o nejnovější záloze
+  uictl diff                      Porovná s nejnovější zálohou
+  uictl diff backup_20240630      Porovná s konkrétní zálohou
   uictl clean 5                   Ponechá jen posledních 5 záloh
   uictl help restore              Nápověda pro příkaz restore
 
@@ -171,9 +174,40 @@ Příklady:
   uictl clean -d           Ukáže co by se smazalo
 EOF
             ;;
+        diff)
+            cat << 'EOF'
+🔍 uictl diff - Porovnání aktuálního nastavení se zálohou
+
+Použití: uictl diff [backup] [možnosti]
+
+Argumenty:
+  backup              Název zálohy k porovnání (backup_YYYYMMDD_HHMMSS)
+                     nebo 'latest' pro nejnovější (výchozí)
+
+Možnosti:
+  -q, --quiet        Tichý režim (pouze základní rozdíly)  
+  -v, --verbose      Podrobný výstup s detaily
+  -d, --dry-run      Alias pro tichý režim (kompatibilita)
+
+Porovnává:
+  - Dconf nastavení (GNOME konfigurace)  
+  - GNOME konfigurační soubory (GTK, autostart, monitor setup atd.)
+  - Povolené GNOME Shell extensions
+  - Lokální GNOME data
+
+Poznámka: Porovnává jen soubory které uictl zálohuje (GNOME-související).
+         Ignoruje dočasné a backup soubory (*.backup-*, *~, *.tmp).
+
+Příklady:
+  uictl diff                       Porovná s nejnovější zálohou
+  uictl diff latest                Porovná s nejnovější zálohou
+  uictl diff backup_20240630       Porovná s konkrétní zálohou
+  uictl diff -v backup_20240630    Podrobné porovnání
+EOF
+            ;;
         *)
             print_error "Neznámý příkaz: $1"
-            echo "Dostupné příkazy: backup, restore, list, status, clean"
+            echo "Dostupné příkazy: backup, restore, list, status, diff, clean"
             ;;
     esac
 }
@@ -386,7 +420,9 @@ create_backup() {
     echo "Kernel: $(uname -r)" >> "$current_backup/backup-info.txt"
     print_success "Metadata uložena"
     
-    cd "$BACKUP_DIR" && ln -sf "backup_$timestamp" latest
+    # Create/update symlink to latest backup
+    cd "$BACKUP_DIR" && rm -f latest && ln -sf "backup_$timestamp" latest
+    print_verbose "Latest symlink aktualizován"
     
     print_info "🧹 Čistím dočasné soubory ze zálohy..."
     find "$current_backup" -name "*.backup-[0-9]*" -type d -exec rm -rf {} + 2>/dev/null || true
@@ -420,6 +456,228 @@ create_pre_restore_backup() {
     [ -d ~/.local/share/gnome-shell/extensions ] && cp -r ~/.local/share/gnome-shell/extensions "$pre_restore_backup/" 2>/dev/null || true
     
     print_success "Záloha před obnovením vytvořena: $(basename "$pre_restore_backup")"
+}
+
+# Helper funkce pro porovnání dconf nastavení
+compare_dconf() {
+    local backup_path="$1"
+    local dconf_backup="$backup_path/dconf/all-settings.ini"
+    
+    if [ ! -f "$dconf_backup" ]; then
+        print_warning "Dconf záloha nenalezena v: $dconf_backup"
+        return 1
+    fi
+    
+    print_info "📊 Porovnávám dconf nastavení..."
+    
+    # Create temporary file with current settings
+    local temp_current="/tmp/uictl-current-dconf-$(date +%s).ini"
+    dconf dump / > "$temp_current" 2>/dev/null
+    
+    if [ "$VERBOSE" = "true" ]; then
+        # Detailed diff with context
+        if ! diff -u "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
+            print_warning "🔄 Rozdíly v dconf nastavení:"
+            diff -u --color=auto "$dconf_backup" "$temp_current" | head -50 | sed 's/^/  /'
+            local diff_lines=$(diff -u "$dconf_backup" "$temp_current" | wc -l)
+            if [ $diff_lines -gt 50 ]; then
+                print_info "  ... (zobrazeno prvních 50 řádků z $diff_lines celkem)"
+            fi
+        else
+            print_success "Dconf nastavení jsou identická"
+        fi
+    else
+        # Simple comparison
+        if ! diff -q "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
+            print_warning "🔄 Dconf nastavení se liší od zálohy"
+        else
+            print_success "Dconf nastavení jsou identická"
+        fi
+    fi
+    
+    rm -f "$temp_current"
+}
+
+# Helper funkce pro porovnání konfiguračních souborů
+compare_config_files() {
+    local backup_path="$1"
+    local config_backup="$backup_path/config"
+    
+    if [ ! -d "$config_backup" ]; then
+        print_warning "Config záloha nenalezena v: $config_backup"
+        return 1
+    fi
+    
+    print_info "📁 Porovnávám konfigurační soubory (jen GNOME-související)..."
+    
+    local differences=0
+    
+    for config_item in "$config_backup"/*; do
+        if [ -e "$config_item" ]; then
+            local item_name=$(basename "$config_item")
+            local current_path="$HOME/.config/$item_name"
+            
+            # Skip backup files and temporary files (not relevant for config comparison)
+            if [[ "$item_name" =~ \.backup-[0-9]+$ ]] || [[ "$item_name" =~ ~$ ]] || [[ "$item_name" =~ \.tmp$ ]]; then
+                print_verbose "  $item_name: přeskakuji (dočasný/backup soubor)"
+                continue
+            fi
+            
+            if [ ! -e "$current_path" ]; then
+                print_warning "  $item_name: chybí v aktuální konfiguraci"
+                differences=$((differences + 1))
+            elif [ -d "$config_item" ] && [ -d "$current_path" ]; then
+                # Compare directories using rsync dry-run
+                if ! rsync -rczn --delete "$config_item/" "$current_path/" >/dev/null 2>&1; then
+                    print_warning "  $item_name: adresář se liší"
+                    differences=$((differences + 1))
+                    if [ "$VERBOSE" = "true" ]; then
+                        rsync -rczn --delete --itemize-changes "$config_item/" "$current_path/" 2>/dev/null | head -10 | sed 's/^/    /'
+                    fi
+                elif [ "$VERBOSE" = "true" ]; then
+                    print_success "  $item_name: adresář identický"
+                fi
+            elif [ -f "$config_item" ] && [ -f "$current_path" ]; then
+                # Compare files
+                if ! diff -q "$config_item" "$current_path" >/dev/null 2>&1; then
+                    print_warning "  $item_name: soubor se liší"
+                    differences=$((differences + 1))
+                    if [ "$VERBOSE" = "true" ]; then
+                        diff -u "$config_item" "$current_path" | head -20 | sed 's/^/    /'
+                    fi
+                elif [ "$VERBOSE" = "true" ]; then
+                    print_success "  $item_name: soubor identický"
+                fi
+            fi
+        fi
+    done
+    
+    # Check only GNOME-related config items that uictl actually backs up
+    # This prevents diff from showing irrelevant non-GNOME application changes
+    local gnome_config_items=(
+        "dconf"
+        "gtk-2.0" 
+        "gtk-3.0"
+        "gtk-4.0"
+        "autostart"
+        "tiling-assistant"
+        "gnome-session"
+        "monitors.xml"
+        "mimeapps.list" 
+        "user-dirs.dirs"
+    )
+    
+    for item_name in "${gnome_config_items[@]}"; do
+        local current_item="$HOME/.config/$item_name"
+        local backup_item="$config_backup/$item_name"
+        
+        # Skip backup files and temporary files (not relevant for config comparison)
+        if [[ "$item_name" =~ \.backup-[0-9]+$ ]] || [[ "$item_name" =~ ~$ ]] || [[ "$item_name" =~ \.tmp$ ]]; then
+            print_verbose "  $item_name: přeskakuji (dočasný/backup soubor)"
+            continue
+        fi
+        
+        if [ -e "$current_item" ] && [ ! -e "$backup_item" ]; then
+            print_info "  $item_name: nový v aktuální konfiguraci (není v záloze)"
+            differences=$((differences + 1))
+        elif [ ! -e "$current_item" ] && [ -e "$backup_item" ]; then
+            print_warning "  $item_name: chybí v aktuální konfiguraci (byl v záloze)"
+            differences=$((differences + 1))
+        fi
+    done
+    
+    if [ $differences -eq 0 ]; then
+        print_success "Konfigurační soubory jsou identické"
+    else
+        print_warning "Nalezeno $differences rozdílů v konfiguračních souborech"
+    fi
+}
+
+# Helper funkce pro porovnání extensions
+compare_extensions() {
+    local backup_path="$1"
+    
+    print_info "🔌 Porovnávám GNOME Shell extensions..."
+    
+    # Compare enabled extensions
+    if [ -f "$backup_path/enabled-extensions.txt" ]; then
+        local backup_extensions=$(cat "$backup_path/enabled-extensions.txt")
+        local current_extensions=$(gsettings get org.gnome.shell enabled-extensions 2>/dev/null || echo "[]")
+        
+        if [ "$backup_extensions" != "$current_extensions" ]; then
+            print_warning "🔄 Seznam povolených extensions se liší"
+            if [ "$VERBOSE" = "true" ]; then
+                echo "  Záloha:    $backup_extensions" | sed 's/^/  /'
+                echo "  Aktuální:  $current_extensions" | sed 's/^/  /'
+            fi
+        else
+            print_success "Seznam povolených extensions je identický"
+        fi
+    fi
+    
+    # Compare user extensions directory
+    local extensions_backup="$backup_path/local/extensions"
+    local current_extensions_dir="$HOME/.local/share/gnome-shell/extensions"
+    
+    if [ -d "$extensions_backup" ]; then
+        if [ ! -d "$current_extensions_dir" ]; then
+            print_warning "  Adresář extensions chybí v aktuální instalaci"
+        elif ! rsync -rczn --delete "$extensions_backup/" "$current_extensions_dir/" >/dev/null 2>&1; then
+            print_warning "🔄 Adresář extensions se liší"
+            if [ "$VERBOSE" = "true" ]; then
+                rsync -rczn --delete --itemize-changes "$extensions_backup/" "$current_extensions_dir/" 2>/dev/null | head -10 | sed 's/^/    /'
+            fi
+        else
+            print_success "Adresář extensions je identický"
+        fi
+    fi
+}
+
+# Funkce pro porovnání aktuálního nastavení se zálohou
+diff_settings() {
+    local backup_name="${1:-latest}"
+    local backup_path
+    
+    # Resolve backup path
+    if [[ "$backup_name" == "latest" ]]; then
+        if [ -L "$BACKUP_DIR/latest" ]; then
+            backup_path="$BACKUP_DIR/$(readlink "$BACKUP_DIR/latest")"
+            backup_name="latest ($(readlink "$BACKUP_DIR/latest"))"
+        else
+            print_error "'latest' symlink neexistuje"
+            print_info "Použijte 'uictl list' pro zobrazení dostupných záloh"
+            return 1
+        fi
+    elif [[ "$backup_name" == backup_* ]]; then
+        backup_path="$BACKUP_DIR/$backup_name"
+    else
+        backup_path="$BACKUP_DIR/backup_$backup_name"
+    fi
+    
+    if [ ! -d "$backup_path" ]; then
+        print_error "Záloha neexistuje: $backup_path"
+        list_backups
+        return 1
+    fi
+    
+    print_info "🔍 Porovnávám aktuální GNOME nastavení se zálohou: $backup_name"
+    
+    if [ -f "$backup_path/backup-info.txt" ]; then
+        print_info "📋 Informace o záloze:"
+        cat "$backup_path/backup-info.txt" | sed 's/^/  /'
+        echo
+    fi
+    
+    # Perform comparisons
+    compare_dconf "$backup_path"
+    echo
+    compare_config_files "$backup_path"
+    echo
+    compare_extensions "$backup_path"
+    
+    echo
+    print_info "🔍 Porovnání dokončeno"
+    print_info "💡 Pro podrobné rozdíly použijte: uictl diff -v $backup_name"
 }
 
 # Funkce pro obnovení nastavení (ze starého restore.sh)
@@ -628,6 +886,15 @@ main() {
         status)
             show_status
             ;;
+        diff)
+            # Default to latest if no backup specified
+            local backup_name="latest"
+            if [ ${#cmd_args[@]} -gt 0 ]; then
+                backup_name="${cmd_args[0]}"
+            fi
+            
+            diff_settings "$backup_name"
+            ;;
         clean)
             # Parsování argumentů pro clean - první non-option argument je počet
             local keep_count=10
@@ -651,7 +918,8 @@ main() {
             ;;
         *)
             print_error "Neznámý příkaz: $command"
-            echo "Použijte 'uictl help' pro zobrazení dostupných příkazů"
+            echo
+            show_main_help
             exit 1
             ;;
     esac
