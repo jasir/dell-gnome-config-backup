@@ -88,7 +88,7 @@ echo "OS: $(lsb_release -d 2>/dev/null | cut -d: -f2 | xargs || echo 'Unknown')"
 echo "Kernel: $(uname -r)" >> "$CURRENT_BACKUP/backup-info.txt"
 
 # Vytvoření symlinku na nejnovější zálohu
-ln -sf "backup_$TIMESTAMP" "$BACKUP_DIR/latest"
+cd "$BACKUP_DIR" && ln -sf "backup_$TIMESTAMP" latest
 
 print_success "🎉 Záloha úspěšně dokončena!"
 print_info "📂 Umístění zálohy: $CURRENT_BACKUP"

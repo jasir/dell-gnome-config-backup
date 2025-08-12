@@ -24,6 +24,9 @@ BACKUP_DIR="$SCRIPT_DIR/backups"
 
 # Funkce pro zobrazení nápovědy
 show_help() {
+    echo "🔄 GNOME Restore Script"
+    echo "Obnoví GNOME nastavení ze zálohy"
+    echo
     echo "Použití: $0 [možnosti] [záloha]"
     echo
     echo "Možnosti:"
@@ -34,12 +37,17 @@ show_help() {
     echo
     echo "Argumenty:"
     echo "  záloha                  Název zálohy (např. backup_20240630_143022)"
-    echo "                          Pokud není specifikováno, použije se 'latest'"
+    echo "                          nebo 'latest' pro nejnovější zálohu"
     echo
     echo "Příklady:"
-    echo "  $0                      Obnoví nejnovější zálohu"
-    echo "  $0 backup_20240630_143022  Obnoví specifickou zálohu"
     echo "  $0 -l                   Zobrazí seznam dostupných záloh"
+    echo "  $0 latest               Obnoví nejnovější zálohu"
+    echo "  $0 backup_20240630_143022  Obnoví specifickou zálohu"
+    echo "  $0 -d latest            Dry-run - ukáže co by se dělalo"
+    echo "  $0 -f latest            Obnoví bez ptání na potvrzení"
+    echo
+    echo "⚠️  POZOR: Restore přepíše vaše současné GNOME nastavení!"
+    echo "📋 Pro zobrazení záloh použijte: $0 -l"
 }
 
 # Funkce pro výpis dostupných záloh
@@ -224,16 +232,20 @@ done
 
 # Určení cesty k záloze
 if [ -z "$BACKUP_NAME" ]; then
-    if [ -L "$BACKUP_DIR/latest" ]; then
-        RESTORE_PATH="$BACKUP_DIR/$(readlink "$BACKUP_DIR/latest")"
-        BACKUP_NAME="latest ($(readlink "$BACKUP_DIR/latest"))"
-    else
-        print_error "Žádná záloha není specifikována a 'latest' symlink neexistuje"
-        print_info "Použijte -l pro zobrazení dostupných záloh"
-        exit 1
-    fi
+    # Bez parametrů zobrazit help
+    show_help
+    exit 0
 else
-    if [[ "$BACKUP_NAME" == backup_* ]]; then
+    if [[ "$BACKUP_NAME" == "latest" ]]; then
+        if [ -L "$BACKUP_DIR/latest" ]; then
+            RESTORE_PATH="$BACKUP_DIR/$(readlink "$BACKUP_DIR/latest")"
+            BACKUP_NAME="latest ($(readlink "$BACKUP_DIR/latest"))"
+        else
+            print_error "'latest' symlink neexistuje"
+            print_info "Použijte -l pro zobrazení dostupných záloh"
+            exit 1
+        fi
+    elif [[ "$BACKUP_NAME" == backup_* ]]; then
         RESTORE_PATH="$BACKUP_DIR/$BACKUP_NAME"
     else
         RESTORE_PATH="$BACKUP_DIR/backup_$BACKUP_NAME"
