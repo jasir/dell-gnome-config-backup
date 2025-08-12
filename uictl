@@ -478,7 +478,12 @@ compare_dconf() {
         # Detailed diff with context
         if ! diff -u "$dconf_backup" "$temp_current" > /dev/null 2>&1; then
             print_warning "🔄 Rozdíly v dconf nastavení:"
-            diff -u --color=auto "$dconf_backup" "$temp_current" | head -50 | sed 's/^/  /'
+            # Use delta if available, otherwise fall back to colored diff
+            if command -v delta >/dev/null 2>&1; then
+                diff -u "$dconf_backup" "$temp_current" | head -50 | delta --paging=never --line-numbers
+            else
+                diff -u --color=always "$dconf_backup" "$temp_current" | head -50 | sed 's/^/  /'
+            fi
             local diff_lines=$(diff -u "$dconf_backup" "$temp_current" | wc -l)
             if [ $diff_lines -gt 50 ]; then
                 print_info "  ... (zobrazeno prvních 50 řádků z $diff_lines celkem)"
@@ -543,7 +548,12 @@ compare_config_files() {
                     print_warning "  $item_name: soubor se liší"
                     differences=$((differences + 1))
                     if [ "$VERBOSE" = "true" ]; then
-                        diff -u "$config_item" "$current_path" | head -20 | sed 's/^/    /'
+                        # Use delta if available, otherwise fall back to colored diff
+                        if command -v delta >/dev/null 2>&1; then
+                            diff -u "$config_item" "$current_path" | head -20 | delta --paging=never --line-numbers
+                        else
+                            diff -u --color=always "$config_item" "$current_path" | head -20 | sed 's/^/    /'
+                        fi
                     fi
                 elif [ "$VERBOSE" = "true" ]; then
                     print_success "  $item_name: soubor identický"
