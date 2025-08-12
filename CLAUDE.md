@@ -8,25 +8,29 @@ This is a GNOME configuration backup and restore system for Dell Ubuntu systems.
 
 ## Core Commands
 
-### Backup Operations
+### UICTL - Unified Interface Control
 ```bash
-./backup.sh                    # Create timestamped backup of all GNOME settings
+./uictl backup                 # Create timestamped backup of all GNOME settings
+./uictl restore <backup>       # Restore backup with safety features
+./uictl list                   # List available backups  
+./uictl status                 # Show info about latest backup
+./uictl clean [N]              # Clean old backups (keep N newest)
+./uictl help [command]         # Show help
 ```
 
-### Restore Operations  
+### Global Options
 ```bash
-./restore.sh                   # Restore latest backup (with confirmation)
-./restore.sh backup_20240630   # Restore specific backup
-./restore.sh -l                # List available backups
-./restore.sh -d                # Dry-run mode (preview changes)
-./restore.sh -f                # Force restore without confirmation
+-f, --force                    # Don't ask for confirmation
+-d, --dry-run                  # Only show what would be done (restore/clean)
+-q, --quiet                    # Quiet mode
+-v, --verbose                  # Verbose output
+-h, --help                     # Show help
 ```
 
 ## Architecture
 
 ### Main Components
-- `backup.sh`: Main backup script that exports dconf settings and copies configuration files
-- `restore.sh`: Restore script with safety features (pre-restore backup, confirmation, dry-run)
+- `uictl`: Unified command-line interface for all backup/restore operations
 - `backups/`: Directory containing timestamped backup folders and `latest` symlink
 
 ### Backup Structure

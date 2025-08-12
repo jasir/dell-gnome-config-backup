@@ -6,18 +6,18 @@ Kompletní nástroj pro zálohování a obnovení GNOME nastavení na Dell syst�
 
 ### Záloha
 ```bash
-./backup.sh
+./uictl backup
 ```
 
 ### Obnovení
 ```bash
-./restore.sh                    # Obnoví nejnovější zálohu
-./restore.sh backup_20240630_143022  # Obnoví specifickou zálohu
+./uictl restore latest           # Obnoví nejnovější zálohu
+./uictl restore backup_20240630  # Obnoví specifickou zálohu
 ```
 
 ### Seznam záloh
 ```bash
-./restore.sh -l
+./uictl list
 ```
 
 ## 📋 Co se zálohuje
@@ -47,44 +47,60 @@ Kompletní nástroj pro zálohování a obnovení GNOME nastavení na Dell syst�
 
 ## 🛠️ Použití
 
-### Backup script
+### UICTL - Unified Interface Control
 
-Základní použití:
+UICTL poskytuje jednotné rozhraní pro všechny operace:
+
 ```bash
-./backup.sh
+./uictl <příkaz> [možnosti] [argumenty]
 ```
 
-Script automaticky:
-1. Vytvoří timestampovanou zálohu v `backups/backup_YYYYMMDD_HHMMSS/`
-2. Exportuje všechna dconf nastavení
-3. Zkopíruje relevantní konfigurační soubory
-4. Vytvoří symlink `backups/latest` na nejnovější zálohu
-5. Uloží metadata o systému a extensions
+#### Dostupné příkazy
+- `backup` - Vytvoří zálohu GNOME nastavení
+- `restore <backup>` - Obnoví zálohu GNOME nastavení  
+- `list` - Zobrazí dostupné zálohy
+- `status` - Zobrazí info o nejnovější záloze
+- `clean [N]` - Vyčistí staré zálohy (ponechá N nejnovějších)
+- `help [příkaz]` - Zobrazí nápovědu
 
-### Restore script
-
-#### Možnosti
-- `-l, --list` - Zobrazí dostupné zálohy
+#### Globální možnosti
 - `-f, --force` - Neptat se na potvrzení
-- `-d, --dry-run` - Pouze zobrazí co by se dělalo
+- `-d, --dry-run` - Pouze zobrazí co by se dělalo (restore/clean)
+- `-q, --quiet` - Tichý režim
+- `-v, --verbose` - Podrobný výstup
 - `-h, --help` - Zobrazí nápovědu
 
 #### Příklady použití
 ```bash
+# Vytvořit zálohu
+./uictl backup
+
 # Zobrazit dostupné zálohy
-./restore.sh -l
+./uictl list
+
+# Zobrazit status nejnovější zálohy
+./uictl status
 
 # Obnovit nejnovější zálohu (s potvrzením)
-./restore.sh
+./uictl restore latest
 
 # Obnovit specifickou zálohu
-./restore.sh backup_20240630_143022
+./uictl restore backup_20240630_143022
 
 # Dry-run - ukázat co by se dělalo
-./restore.sh -d backup_20240630_143022
+./uictl restore -d latest
 
 # Obnovit bez ptání na potvrzení
-./restore.sh -f latest
+./uictl restore -f latest
+
+# Vyčistit staré zálohy (ponechat jen 5 nejnovějších)
+./uictl clean 5
+
+# Zobrazit co by se smazalo bez provedení
+./uictl clean -d 3
+
+# Nápověda pro konkrétní příkaz
+./uictl help restore
 ```
 
 ## 🔒 Bezpečnost
