@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="29" last-seen="1754806046"/>
+    <application id="kitty.desktop" score="19" last-seen="1754992867"/>
+    <application id="org.gnome.TextEditor.desktop" score="84.5" last-seen="1754743256"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="497.5" last-seen="1755029459"/>
+    <application id="nemo.desktop" score="37" last-seen="1755121740"/>
+    <application id="chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop" score="0" last-seen="1754667577"/>
+    <application id="guake.desktop" score="10" last-seen="1755003459"/>
+    <application id="gitk.desktop" score="69" last-seen="1755093314"/>
+    <application id="phpstorm_phpstorm.desktop" score="27" last-seen="1754783175"/>
+    <application id="cursor.desktop" score="7992" last-seen="1755093993"/>
+    <application id="variety.desktop" score="3" last-seen="1755016345"/>
+    <application id="com.github.d4nj1.tlpui.desktop" score="0" last-seen="1754949209"/>
+    <application id="google-chrome-unstable.desktop" score="2712.5" last-seen="1755122320"/>
+    <application id="terminator.desktop" score="0" last-seen="1755074815"/>
+    <application id="chrome-pjibgclleladliembfgfagdaldikeohf-Default.desktop" score="100" last-seen="1755155627"/>
+    <application id="org.gnome.eog.desktop" score="0.5" last-seen="1754738531"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="1833" last-seen="1755155030"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="1236" last-seen="1755155718"/>
+    <application id="code.desktop" score="1353" last-seen="1754994415"/>
+    <application id="org.gnome.Terminal.Preferences.desktop" score="9.5" last-seen="1754779186"/>
+    <application id="org.gnome.Software.desktop" score="11" last-seen="1754780255"/>
+    <application id="brave_brave.desktop" score="7132.5" last-seen="1755155744"/>
+    <application id="firefox_firefox.desktop" score="4253.5" last-seen="1755016649"/>
+    <application id="doublecmd.desktop" score="558.5" last-seen="1755155502"/>
+    <application id="org.gnome.font-viewer.desktop" score="1" last-seen="1754779160"/>
+    <application id="chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop" score="21" last-seen="1754667412"/>
+    <application id="org.gnome.Settings.desktop" score="5165.75" last-seen="1755025341"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="0" last-seen="1755027731"/>
+    <application id="org.gnome.Calculator.desktop" score="6.5" last-seen="1754639007"/>
+    <application id="org.gnome.Extensions.desktop" score="84.5" last-seen="1755069267"/>
+    <application id="claude-desktop.desktop" score="5491.25" last-seen="1755083324"/>
+    <application id="org.gnome.Terminal.desktop" score="23570.125" last-seen="1755155031"/>
+    <application id="git-gui.desktop" score="214" last-seen="1755093466"/>
+    <application id="whatsapp-linux-app_whatsapp-linux-app.desktop" score="5772.5" last-seen="1750948893"/>
+    <application id="app.devsuite.Ptyxis.desktop" score="85" last-seen="1754995300"/>
+    <application id="freeplane.desktop" score="0" last-seen="1755046126"/>
+    <application id="chrome-ihhigimjhmcaaaimfbkfipehncfnkipi-Default.desktop" score="226.5" last-seen="1754952025"/>
+    <application id="org.gnome.Nautilus.desktop" score="35" last-seen="1754668756"/>
+    <application id="gedit_gedit.desktop" score="43" last-seen="1754907536"/>
+    <application id="snap-store_snap-store.desktop" score="4" last-seen="1754995453"/>
+    <application id="obsidian.desktop" score="183" last-seen="1755032172"/>
+    <application id="google-chrome.desktop" score="5170" last-seen="1755155673"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="1443" last-seen="1755078666"/>
+    <application id="libreoffice_writer.desktop" score="0" last-seen="1755028941"/>
+  </context>
+</application-state>

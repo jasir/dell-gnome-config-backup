@@ -1,0 +1,11 @@
+[Default Applications]
+text/html=brave_brave.desktop
+x-scheme-handler/http=brave_brave.desktop
+x-scheme-handler/https=brave_brave.desktop
+x-scheme-handler/about=brave_brave.desktop
+x-scheme-handler/unknown=brave_brave.desktop
+inode/directory=nemo.desktop
+application/x-gnome-saved-search=nemo.desktop
+
+[Added Associations]
+application/x-desktop=gedit_gedit.desktop;

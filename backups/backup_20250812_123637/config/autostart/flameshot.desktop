@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Flameshot
+GenericName=Screenshot tool
+Comment=Powerful yet simple to use screenshot software
+Exec=flameshot
+Icon=org.flameshot.Flameshot
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Graphics;
+X-DBUS-StartupType=Unique
+X-DBUS-ServiceName=org.flameshot.Flameshot

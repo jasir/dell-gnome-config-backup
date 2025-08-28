@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Yazi File Manager
+Comment=Blazing fast terminal file manager written in Rust
+Exec=flatpak run app.devsuite.Ptyxis -- yazi
+Icon=file-manager
+Terminal=false
+Type=Application
+Categories=System;FileTools;FileManager;
+Keywords=file;manager;explorer;browser;launcher;
+StartupNotify=true

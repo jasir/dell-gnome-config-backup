@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/c/work/projects/gh-monitor/gh-monitor-my-jobs --repo KosikGroup/web-frontend
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=gh-monitor
+Name=gh-monitor
+Comment[en_US]=
+Comment=
