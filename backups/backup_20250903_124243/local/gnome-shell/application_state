@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="NoMachine-base.desktop" score="794" last-seen="1756891716"/>
+    <application id="featherpad.desktop" score="0" last-seen="1756749846"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="426" last-seen="1756891814"/>
+    <application id="nemo.desktop" score="32.5" last-seen="1756894412"/>
+    <application id="org.gnome.SystemMonitor.desktop" score="7" last-seen="1756807750"/>
+    <application id="gitk.desktop" score="76" last-seen="1756850330"/>
+    <application id="phpstorm_phpstorm.desktop" score="16" last-seen="1756821610"/>
+    <application id="cursor.desktop" score="5987.5" last-seen="1756826051"/>
+    <application id="variety.desktop" score="6" last-seen="1756829651"/>
+    <application id="vlc.desktop" score="4" last-seen="1756812688"/>
+    <application id="google-chrome-unstable.desktop" score="4285.25" last-seen="1756822812"/>
+    <application id="chrome-pjibgclleladliembfgfagdaldikeohf-Default.desktop" score="356" last-seen="1756828639"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="2372.5" last-seen="1756799775"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="2978" last-seen="1756891260"/>
+    <application id="code.desktop" score="2449" last-seen="1756852931"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="4" last-seen="1756737530"/>
+    <application id="org.gnome.Software.desktop" score="19" last-seen="1756643947"/>
+    <application id="chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop" score="43" last-seen="1756850100"/>
+    <application id="brave_brave.desktop" score="9915.25" last-seen="1756887019"/>
+    <application id="firefox_firefox.desktop" score="2151.75" last-seen="1756822084"/>
+    <application id="doublecmd.desktop" score="26" last-seen="1756894028"/>
+    <application id="org.gnome.font-viewer.desktop" score="20" last-seen="1756644097"/>
+    <application id="chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop" score="39" last-seen="1756821827"/>
+    <application id="org.gnome.Settings.desktop" score="2732.875" last-seen="1756886740"/>
+    <application id="gcr-viewer.desktop" score="1" last-seen="1756476338"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="22" last-seen="1756764348"/>
+    <application id="git-gui.desktop" score="327.5" last-seen="1756819315"/>
+    <application id="pinta_pinta.desktop" score="25" last-seen="1756636609"/>
+    <application id="org.keepassxc.KeePassXC.desktop" score="16" last-seen="1756392971"/>
+    <application id="org.gnome.Extensions.desktop" score="38" last-seen="1756564527"/>
+    <application id="claude-desktop.desktop" score="3501.625" last-seen="1756851249"/>
+    <application id="org.gnome.Terminal.desktop" score="15863.0625" last-seen="1756763405"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="107" last-seen="1756337754"/>
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="4" last-seen="1756468272"/>
+    <application id="gnome-display-panel.desktop" score="0" last-seen="0"/>
+    <application id="chrome-ihhigimjhmcaaaimfbkfipehncfnkipi-Default.desktop" score="251.25" last-seen="1756384713"/>
+    <application id="com.teamviewer.TeamViewer.desktop" score="8" last-seen="1756421962"/>
+    <application id="org.gnome.Nautilus.desktop" score="6" last-seen="1756749872"/>
+    <application id="gedit_gedit.desktop" score="0" last-seen="1756476729"/>
+    <application id="yelp.desktop" score="0" last-seen="1756636372"/>
+    <application id="obsidian.desktop" score="2315.5" last-seen="1756857619"/>
+    <application id="google-chrome.desktop" score="5939" last-seen="1756887009"/>
+    <application id="org.gnome.TextEditor.desktop" score="1" last-seen="1756682046"/>
+    <application id="kitty.desktop" score="14913" last-seen="1756894889"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="1543" last-seen="1756819315"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="89" last-seen="1756337719"/>
+  </context>
+</application-state>
