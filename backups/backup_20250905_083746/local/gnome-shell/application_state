@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="nemo.desktop" score="32.5" last-seen="1756894412"/>
+    <application id="vlc.desktop" score="4" last-seen="1756812688"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="112" last-seen="1757054091"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="4" last-seen="1756737530"/>
+    <application id="gitk.desktop" score="78" last-seen="1757011158"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="1543" last-seen="1756819315"/>
+    <application id="org.gnome.Terminal.desktop" score="15863.0625" last-seen="1756944684"/>
+    <application id="chrome-ihhigimjhmcaaaimfbkfipehncfnkipi-Default.desktop" score="251.25" last-seen="1756384713"/>
+    <application id="gcr-viewer.desktop" score="1" last-seen="1756476338"/>
+    <application id="org.gnome.Settings.desktop" score="2740.875" last-seen="1757053815"/>
+    <application id="org.gnome.Nautilus.desktop" score="6" last-seen="1756749872"/>
+    <application id="org.gnome.font-viewer.desktop" score="20" last-seen="1756644097"/>
+    <application id="kitty.desktop" score="16386" last-seen="1757053846"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="3271" last-seen="1757053347"/>
+    <application id="pinta_pinta.desktop" score="25" last-seen="1756636609"/>
+    <application id="cursor.desktop" score="5987.5" last-seen="1756826051"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="444" last-seen="1757052414"/>
+    <application id="phpstorm_phpstorm.desktop" score="16" last-seen="1756821610"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="89" last-seen="1756337719"/>
+    <application id="brave_brave.desktop" score="10112.25" last-seen="1757053505"/>
+    <application id="git-gui.desktop" score="328.5" last-seen="1756947802"/>
+    <application id="firefox_firefox.desktop" score="2158.75" last-seen="1757054177"/>
+    <application id="chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop" score="43" last-seen="1756850100"/>
+    <application id="com.teamviewer.TeamViewer.desktop" score="8" last-seen="1756421962"/>
+    <application id="chrome-pjibgclleladliembfgfagdaldikeohf-Default.desktop" score="356" last-seen="1756828639"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="25" last-seen="1757052435"/>
+    <application id="org.gnome.Extensions.desktop" score="51" last-seen="1757054175"/>
+    <application id="org.keepassxc.KeePassXC.desktop" score="16" last-seen="1756392971"/>
+    <application id="dev.zed.Zed.desktop" score="2" last-seen="1757053758"/>
+    <application id="org.gnome.SystemMonitor.desktop" score="7" last-seen="1756807750"/>
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="4" last-seen="1756468272"/>
+    <application id="chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop" score="39" last-seen="1756821827"/>
+    <application id="org.gnome.Software.desktop" score="19" last-seen="1756643947"/>
+    <application id="google-chrome.desktop" score="6073" last-seen="1757052612"/>
+    <application id="claude-desktop.desktop" score="3538.625" last-seen="1757054032"/>
+    <application id="org.gnome.TextEditor.desktop" score="1" last-seen="1756682046"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="2372.5" last-seen="1756799775"/>
+    <application id="code.desktop" score="2450" last-seen="1756947685"/>
+    <application id="yelp.desktop" score="0" last-seen="1756636372"/>
+    <application id="NoMachine-base.desktop" score="908" last-seen="1757053114"/>
+    <application id="gnome-display-panel.desktop" score="0" last-seen="0"/>
+    <application id="doublecmd.desktop" score="26" last-seen="1756918064"/>
+    <application id="featherpad.desktop" score="0" last-seen="1756749846"/>
+    <application id="obsidian.desktop" score="2333.5" last-seen="1756981761"/>
+    <application id="google-chrome-unstable.desktop" score="4285.25" last-seen="1756949628"/>
+    <application id="gedit_gedit.desktop" score="0" last-seen="1756476729"/>
+    <application id="variety.desktop" score="6" last-seen="1756829651"/>
+  </context>
+</application-state>

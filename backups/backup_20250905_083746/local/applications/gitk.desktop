@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Gitk
+GenericName=Git Repository Viewer
+Comment=Git repository browser
+Exec=gitk
+Icon=/usr/share/icons/Papirus/48x48/apps/git-gui.svg
+Terminal=false
+Categories=Development;RevisionControl;
+MimeType=inode/directory;
+Keywords=git;vcs;version control;history;
