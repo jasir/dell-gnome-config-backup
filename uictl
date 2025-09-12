@@ -392,7 +392,6 @@ create_backup() {
     [ -d ~/.config/tiling-assistant ] && cp -r ~/.config/tiling-assistant "$current_backup/config/" && print_verbose "Tiling Assistant nastavení zkopírána"
     [ -d ~/.config/gnome-session ] && cp -r ~/.config/gnome-session "$current_backup/config/" && print_verbose "GNOME Session nastavení zkopírána"
     
-    [ -f ~/.config/monitors.xml ] && cp ~/.config/monitors.xml "$current_backup/config/" && print_verbose "Monitor nastavení zkopírováno"
     [ -f ~/.config/mimeapps.list ] && cp ~/.config/mimeapps.list "$current_backup/config/" && print_verbose "MIME aplikace zkopírovány"
     [ -f ~/.config/user-dirs.dirs ] && cp ~/.config/user-dirs.dirs "$current_backup/config/" && print_verbose "Uživatelské adresáře zkopírovány"
     print_success "Konfigurační soubory zkopírovány"
@@ -600,7 +599,6 @@ compare_config_files() {
         "autostart"
         "tiling-assistant"
         "gnome-session"
-        "monitors.xml"
         "mimeapps.list" 
         "user-dirs.dirs"
     )

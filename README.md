@@ -123,7 +123,6 @@ backups/
 │   │   ├── gtk-3.0/
 │   │   ├── autostart/
 │   │   ├── tiling-assistant/
-│   │   └── monitors.xml
 │   ├── dconf/
 │   │   ├── all-settings.ini
 │   │   ├── extensions-settings.ini

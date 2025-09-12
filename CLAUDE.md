@@ -36,7 +36,7 @@ This is a GNOME configuration backup and restore system for Dell Ubuntu systems.
 ### Backup Structure
 Each backup contains:
 - `dconf/`: Exported GNOME settings (all-settings.ini, extensions-settings.ini, etc.)
-- `config/`: Configuration files from ~/.config (gtk themes, autostart, monitors.xml, etc.)
+- `config/`: Configuration files from ~/.config (gtk themes, autostart, etc.)
 - `local/`: Extensions and application data from ~/.local/share
 - `backup-info.txt`: System metadata and backup information
 - `enabled-extensions.txt`: List of active GNOME extensions
@@ -44,7 +44,6 @@ Each backup contains:
 ### What Gets Backed Up
 - All dconf/gsettings (GNOME configuration database)
 - GTK 2.0/3.0/4.0 themes and settings
-- Monitor configurations and display settings
 - GNOME Shell extensions (user-installed)
 - Autostart applications
 - MIME type associations
