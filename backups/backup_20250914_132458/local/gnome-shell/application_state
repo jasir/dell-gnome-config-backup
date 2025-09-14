@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="0.5" last-seen="1757580924"/>
+    <application id="kitty.desktop" score="18854.5" last-seen="1757848507"/>
+    <application id="org.gnome.TextEditor.desktop" score="2" last-seen="1757722596"/>
+    <application id="NoMachine-base.desktop" score="1083" last-seen="1757775787"/>
+    <application id="nemo.desktop" score="16.25" last-seen="1757813841"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="285" last-seen="1757587152"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="3" last-seen="1757811912"/>
+    <application id="luakit.desktop" score="32.5" last-seen="1757347967"/>
+    <application id="phpstorm_phpstorm.desktop" score="148.5" last-seen="1757848299"/>
+    <application id="gitk.desktop" score="71.5" last-seen="1757813295"/>
+    <application id="org.gnome.tweaks.desktop" score="41" last-seen="1757729866"/>
+    <application id="vlc.desktop" score="2" last-seen="1757352351"/>
+    <application id="google-chrome-unstable.desktop" score="2372.625" last-seen="1757814216"/>
+    <application id="chrome-pjibgclleladliembfgfagdaldikeohf-Default.desktop" score="378.5" last-seen="1757774304"/>
+    <application id="cursor.desktop" score="3395.25" last-seen="1757814254"/>
+    <application id="org.gnome.eog.desktop" score="0" last-seen="1757806754"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="1272.25" last-seen="1757815807"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="1690" last-seen="1757607074"/>
+    <application id="code.desktop" score="1242" last-seen="1757814174"/>
+    <application id="chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop" score="35" last-seen="1757358170"/>
+    <application id="org.gnome.Software.desktop" score="8" last-seen="1757811962"/>
+    <application id="brave_brave.desktop" score="6948.125" last-seen="1757847684"/>
+    <application id="firefox_firefox.desktop" score="1079.375" last-seen="1757290232"/>
+    <application id="doublecmd.desktop" score="17.5" last-seen="1757259070"/>
+    <application id="org.remmina.Remmina.desktop" score="2.5" last-seen="1757581356"/>
+    <application id="org.gnome.Settings.desktop" score="1492.9375" last-seen="1757729302"/>
+    <application id="chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop" score="26.5" last-seen="1757346876"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="51.5" last-seen="1757608270"/>
+    <application id="org.gnome.Extensions.desktop" score="76" last-seen="1757344735"/>
+    <application id="git-gui.desktop" score="202.25" last-seen="1757848123"/>
+    <application id="claude-desktop.desktop" score="2134.3125" last-seen="1757848508"/>
+    <application id="org.gnome.Terminal.desktop" score="7931.53125" last-seen="1756944684"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="93.5" last-seen="1757366710"/>
+    <application id="zen.desktop" score="404" last-seen="1757800809"/>
+    <application id="freeplane.desktop" score="715" last-seen="1757821141"/>
+    <application id="chrome-ihhigimjhmcaaaimfbkfipehncfnkipi-Default.desktop" score="125.625" last-seen="1757814329"/>
+    <application id="org.gnome.Nautilus.desktop" score="5" last-seen="1757290287"/>
+    <application id="gedit_gedit.desktop" score="2.5" last-seen="1757362760"/>
+    <application id="geany.desktop" score="1" last-seen="1757812028"/>
+    <application id="update-manager.desktop" score="1.5" last-seen="1757331156"/>
+    <application id="obsidian.desktop" score="1371.75" last-seen="1757806172"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="921.5" last-seen="1757815748"/>
+    <application id="org.gnome.baobab.desktop" score="0" last-seen="1757284439"/>
+    <application id="google-chrome.desktop" score="4464" last-seen="1757847653"/>
+  </context>
+</application-state>
