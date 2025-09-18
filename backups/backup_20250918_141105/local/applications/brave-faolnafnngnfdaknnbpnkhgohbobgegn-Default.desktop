@@ -1,0 +1,22 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Outlook
+Exec=brave --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn
+Icon=/usr/share/icons/Papirus/24x24/apps/ms-outlook.svg
+StartupWMClass=crx_faolnafnngnfdaknnbpnkhgohbobgegn
+Actions=Nov--ud-lost;Nov--zpr-va;Otev--t-kalend--
+
+[Desktop Action Nov--ud-lost]
+Name=Nová událost
+Exec=brave --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn --app-launch-url-for-shortcuts-menu-item=https://outlook.office.com/calendar/deeplink/compose
+
+[Desktop Action Nov--zpr-va]
+Name=Nová zpráva
+Exec=brave --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn --app-launch-url-for-shortcuts-menu-item=https://outlook.office.com/mail/deeplink/compose
+
+[Desktop Action Otev--t-kalend--]
+Name=Otevřít kalendář
+Exec=brave --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn --app-launch-url-for-shortcuts-menu-item=https://outlook.office.com/calendar
