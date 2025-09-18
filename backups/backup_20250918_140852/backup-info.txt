@@ -1,0 +1,6 @@
+GNOME Backup - Čt 18. září 2025, 14:08:52 CEST
+Hostname: nb-asus
+User: jarda
+GNOME Version: GNOME Shell 46.0
+OS: Ubuntu 24.04.3 LTS
+Kernel: 6.14.0-29-generic

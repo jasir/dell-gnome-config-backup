@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="0.25" last-seen="1758189529"/>
+    <application id="kitty.desktop" score="13046.75" last-seen="1758196564"/>
+    <application id="org.gnome.TextEditor.desktop" score="6" last-seen="1758113417"/>
+    <application id="nemo.desktop" score="10.625" last-seen="1758194823"/>
+    <application id="org.gnome.SystemMonitor.desktop" score="0.5" last-seen="1758159537"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="210.5" last-seen="1758194851"/>
+    <application id="NoMachine-base.desktop" score="839" last-seen="1758189897"/>
+    <application id="xdg-desktop-portal-gnome.desktop" score="1.5" last-seen="1757811912"/>
+    <application id="libreoffice_calc.desktop" score="0" last-seen="1757894173"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="36.5" last-seen="1758150575"/>
+    <application id="org.gnome.tweaks.desktop" score="27.5" last-seen="1758111870"/>
+    <application id="gitk.desktop" score="38.75" last-seen="1757893780"/>
+    <application id="com.vixalien.sticky.desktop" score="6.5" last-seen="1758110685"/>
+    <application id="google-chrome-unstable.desktop" score="1505.3125" last-seen="1758196569"/>
+    <application id="chrome-pjibgclleladliembfgfagdaldikeohf-Default.desktop" score="357.25" last-seen="1758194996"/>
+    <application id="org.gnome.eog.desktop" score="0" last-seen="1757806754"/>
+    <application id="chrome-epfdfgjljdhodmmngbaagegipgmbgpoj-Default.desktop" score="690.125" last-seen="1758109870"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="942.5" last-seen="1758196513"/>
+    <application id="cursor.desktop" score="2485.625" last-seen="1758196494"/>
+    <application id="code.desktop" score="623" last-seen="1758112149"/>
+    <application id="org.gnome.Software.desktop" score="8.5" last-seen="1758110447"/>
+    <application id="phpstorm_phpstorm.desktop" score="159.75" last-seen="1758102232"/>
+    <application id="brave_brave.desktop" score="4099.5625" last-seen="1758193535"/>
+    <application id="firefox_firefox.desktop" score="0" last-seen="1758194659"/>
+    <application id="org.remmina.Remmina.desktop" score="1.25" last-seen="1757581356"/>
+    <application id="org.gnome.Settings.desktop" score="763.46875" last-seen="1758148373"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="33.75" last-seen="1757979627"/>
+    <application id="org.gnome.Extensions.desktop" score="3.5" last-seen="1758155269"/>
+    <application id="git-gui.desktop" score="132.125" last-seen="1758195149"/>
+    <application id="libreoffice-writer.desktop" score="0" last-seen="1758154021"/>
+    <application id="claude-desktop.desktop" score="1241.15625" last-seen="1758193489"/>
+    <application id="org.gnome.Terminal.desktop" score="3965.765625" last-seen="1756944684"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="25" last-seen="1758150494"/>
+    <application id="zen.desktop" score="296" last-seen="1758192946"/>
+    <application id="freeplane.desktop" score="1627.5" last-seen="1758196596"/>
+    <application id="chrome-ihhigimjhmcaaaimfbkfipehncfnkipi-Default.desktop" score="62.8125" last-seen="1757814329"/>
+    <application id="gedit_gedit.desktop" score="1.5" last-seen="1758194820"/>
+    <application id="org.gnome.Nautilus.desktop" score="0" last-seen="1758113424"/>
+    <application id="geany.desktop" score="1.5" last-seen="1758152265"/>
+    <application id="yelp.desktop" score="0" last-seen="1757925424"/>
+    <application id="update-manager.desktop" score="2" last-seen="1758182265"/>
+    <application id="obsidian.desktop" score="779.375" last-seen="1758186814"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="605.75" last-seen="1758194797"/>
+    <application id="google-chrome.desktop" score="2387" last-seen="1758196531"/>
+  </context>
+</application-state>
