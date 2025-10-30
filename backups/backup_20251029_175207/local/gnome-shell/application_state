@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="kitty.desktop" score="18286.59375" last-seen="1761756346"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="259.9375" last-seen="1761755126"/>
+    <application id="org.gnome.Evolution-alarm-notify.desktop" score="1" last-seen="1761226735"/>
+    <application id="dev.zed.Zed.desktop" score="392" last-seen="1761753630"/>
+    <application id="gitk.desktop" score="1" last-seen="1761752692"/>
+    <application id="phpstorm_phpstorm.desktop" score="85" last-seen="1761290133"/>
+    <application id="cursor.desktop" score="679.25" last-seen="1761314317"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="7" last-seen="1761290395"/>
+    <application id="google-chrome-unstable.desktop" score="690.9140625" last-seen="1761314240"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="1105.5625" last-seen="1761752001"/>
+    <application id="NoMachine-base.desktop" score="881.375" last-seen="1761235545"/>
+    <application id="brave_brave.desktop" score="3242.6953125" last-seen="1761756347"/>
+    <application id="gnome-bluetooth-panel.desktop" score="0" last-seen="0"/>
+    <application id="org.gnome.Settings.desktop" score="171.43359375" last-seen="1761725742"/>
+    <application id="chrome-nbnkbooldngboeiogpdbnijbejgppfgo-Default.desktop" score="27" last-seen="1761218893"/>
+    <application id="org.flameshot.Flameshot.desktop" score="0" last-seen="1761221092"/>
+    <application id="claude-desktop.desktop" score="1172.01953125" last-seen="1761224573"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="13" last-seen="1761221019"/>
+    <application id="zen.desktop" score="459.25" last-seen="1761168029"/>
+    <application id="freeplane.desktop" score="903.4375" last-seen="1761183637"/>
+    <application id="org.gnome.Extensions.desktop" score="33.75" last-seen="1761220812"/>
+    <application id="yelp.desktop" score="0" last-seen="1761756345"/>
+    <application id="obsidian.desktop" score="158.5" last-seen="1761290000"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="269" last-seen="1761183524"/>
+    <application id="org.gnome.clocks.desktop" score="0" last-seen="1761222879"/>
+    <application id="google-chrome.desktop" score="1317.375" last-seen="1761752003"/>
+  </context>
+</application-state>
