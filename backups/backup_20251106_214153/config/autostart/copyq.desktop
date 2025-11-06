@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=CopyQ
+GenericName=Clipboard Manager
+Comment=A cut & paste history utility
+Exec=copyq --start-server
+Icon=copyq
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-Delay=3
+Categories=Qt;Utility;

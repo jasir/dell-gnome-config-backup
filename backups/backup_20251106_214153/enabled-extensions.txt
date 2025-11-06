@@ -1,0 +1,1 @@
+['apps-menu@gnome-shell-extensions.gcampax.github.com', 'cronomix@zagortenay333', 'notification-banner-reloaded@marcinjakubowski.github.com', 'paperwm@paperwm.github.com', 'system-monitor@gnome-shell-extensions.gcampax.github.com', 'impatience@gfxmonk.net', 'quick-settings-tweaks@qwreey', 'ubuntu-appindicators@ubuntu.com']

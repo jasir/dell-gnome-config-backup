@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=DPMS Keeper Daemon
+Comment=Maintains DPMS timeout at 60 seconds (workaround for gsd-power resetting it to 0)
+Exec=/home/jarda/scripts-ai/dpms-keeper
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=10
+NoDisplay=true

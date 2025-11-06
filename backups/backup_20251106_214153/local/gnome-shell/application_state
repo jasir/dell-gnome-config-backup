@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="ca.desrt.dconf-editor.desktop" score="29" last-seen="1762458237"/>
+    <application id="chrome-fmiklccbdhaokflgbikhgcikpdiocjhn-Default.desktop" score="30" last-seen="1762439335"/>
+    <application id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" score="1397.3125" last-seen="1762436609"/>
+    <application id="kitty.desktop" score="12761.25" last-seen="1762461016"/>
+    <application id="google-chrome.desktop" score="3618.0625" last-seen="1762458046"/>
+    <application id="terminator.desktop" score="3" last-seen="1762455465"/>
+    <application id="NoMachine-base.desktop" score="13314.375" last-seen="1762458062"/>
+    <application id="org.gnome.Evolution-alarm-notify.desktop" score="0" last-seen="1762455233"/>
+    <application id="gitk.desktop" score="4" last-seen="1762437526"/>
+    <application id="gedit_gedit.desktop" score="0" last-seen="1762089403"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="6" last-seen="1762458189"/>
+    <application id="com.mattjakeman.ExtensionManager.desktop" score="4" last-seen="1762344432"/>
+    <application id="claude-desktop.desktop" score="1254.46875" last-seen="1762454168"/>
+    <application id="brave_brave.desktop" score="12357.0625" last-seen="1762454868"/>
+    <application id="google-chrome-unstable.desktop" score="4002.25" last-seen="1762456274"/>
+    <application id="dev.zed.Zed.desktop" score="260.75" last-seen="1762456485"/>
+    <application id="cursor.desktop" score="4291.25" last-seen="1762453773"/>
+    <application id="chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop" score="473.5" last-seen="1762454330"/>
+    <application id="firefox_firefox.desktop" score="0" last-seen="1762432371"/>
+    <application id="update-manager.desktop" score="10.25" last-seen="1762270098"/>
+    <application id="git-gui.desktop" score="3" last-seen="1762439173"/>
+    <application id="yelp.desktop" score="0" last-seen="1762339041"/>
+    <application id="code.desktop" score="0" last-seen="1762424630"/>
+    <application id="chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop" score="494.8125" last-seen="1762460932"/>
+    <application id="org.gnome.Extensions.desktop" score="101.5" last-seen="1762434721"/>
+    <application id="org.gnome.Settings.desktop" score="90.25" last-seen="1762458312"/>
+  </context>
+</application-state>
