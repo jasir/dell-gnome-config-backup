@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Cursor
+Exec=/home/jarda/.local/bin/cursor/AppRun %U
+Icon=/home/jarda/.local/bin/cursor/co.anysphere.cursor.png
+Type=Application
+Categories=Development;TextEditor;IDE;
+Comment=AI-powered code editor
+Terminal=false
+StartupWMClass=Cursor
+MimeType=x-scheme-handler/cursor;

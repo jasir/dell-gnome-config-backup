@@ -1,0 +1,12 @@
+[MIME Cache]
+application/x-sh=kitty-open.desktop;
+application/x-shellscript=kitty-open.desktop;
+application/x-zerosize=dev.zed.Zed.desktop;
+image/*=kitty-open.desktop;
+inode/directory=git-gui.desktop;gitk.desktop;kitty-open.desktop;
+text/*=kitty-open.desktop;
+text/plain=dev.zed.Zed.desktop;
+x-scheme-handler/cursor=cursor.desktop;
+x-scheme-handler/kitty=kitty-open.desktop;
+x-scheme-handler/ssh=kitty-open.desktop;
+x-scheme-handler/zed=dev.zed.Zed.desktop;
